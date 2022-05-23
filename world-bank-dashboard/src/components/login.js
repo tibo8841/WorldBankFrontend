@@ -1,4 +1,4 @@
-function login() {
+function loginUser() {
   //add functionality to login form
   return (
     <div className="Login">
@@ -20,4 +20,4 @@ function login() {
   );
 }
 
-export default login;
+export default loginUser;
