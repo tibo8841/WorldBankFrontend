@@ -15,13 +15,13 @@ This data consists of a vast magnitude of information that the World Bank knows 
 
 This folder specifically contains all of the frontend functionality and what the user sees, including the React app and its components.
 
-~ Can add more later on~
+~ Can add more later on ~
 
 
 ## Installation
-~Need to update~
+~ Need to update ~
 
-~EXAMPLE:~ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+~ EXAMPLE: ~ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
 ```bash
 
