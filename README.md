@@ -8,7 +8,7 @@ This data consists of a vast magnitude of information that the World Bank knows 
 * If two countries are selected, users are then required to select an indicator and a year range
   * When enquiring a range of years, the results will be represented by a superimposed line graph, where each line represents each country selected
   * When enquiring a specific year, the results will be represented by a numerical value for each country
-* If one country is selected, users will be able to leave the indicator section blank, which will return the results for all indicators of that country
+* If one country is selected, users will be able to leave the indicator section blank, which will return the results of all indicators of that country
 
 * Finally, users will have access to their search history with the time and date of enquiry, along with the option to view the data for the enquiry made.
 
