@@ -1,4 +1,4 @@
-# World Bank Dashboard - Frontend 🥐
+# World Bank Dashboard - Frontend 🥐 (West Ham sucks)
 
 World Bank Dashboard is a prototype for the World Bank and their World Development Indicators. 
 
