@@ -1,7 +1,7 @@
 function mainPageHeader() {
   return (
     <div>
-      <header>main header that wont go away</header>
+      <header>World Bank Dashboard</header>
     </div>
   );
 }
