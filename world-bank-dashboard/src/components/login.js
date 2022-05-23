@@ -15,6 +15,8 @@ function loginUser() {
         <input type="text" id="password">
           password
         </input>
+        <button id="Login-button">Log-in</button>
+        <button id="Register_button">Register New User</button>
       </form>
     </div>
   );
