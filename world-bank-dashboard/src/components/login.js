@@ -1,4 +1,4 @@
-function login() {
+function loginUser() {
   //add functionality to login form
   return (
     <div className="Login">
@@ -15,9 +15,11 @@ function login() {
         <input type="text" id="password">
           password
         </input>
+        <button id="Login-button">Log-in</button>
+        <button id="Register_button">Register New User</button>
       </form>
     </div>
   );
 }
 
-export default login;
+export default loginUser;
