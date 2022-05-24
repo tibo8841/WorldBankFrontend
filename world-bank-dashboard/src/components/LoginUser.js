@@ -25,7 +25,7 @@ export default function LoginUser() {
             onChange={(e) => setUsername(e.target.value)}
           ></input>
         </label>
-        <label for="password">
+        <label htmlFor="password">
           Password
           <input
             type="password"
