@@ -5,12 +5,12 @@ export default function MainPageHeader() {
     <div>
       <div className="Header-left">
         <header>World Bank Logo</header>
-        <Link to="/login" />
-        <Link to="/register" />
+        <Link to="/login">Log-In</Link>
+        <Link to="/register">Register</Link>
       </div>
       <div className="Header-right">
-        <Link to="/search" />
-        <Link to="/history" />
+        <Link to="/search">Search</Link>
+        <Link to="/history">History</Link>
       </div>
     </div>
   );
