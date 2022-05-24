@@ -1,8 +1,9 @@
-function registerUser() {
+export default function LoginUser() {
+  //add functionality to login form
   return (
-    <div className="Register">
-      <header className="Register-Header">Register New User</header>
-      <form className="Register-form">
+    <div className="Login">
+      <header className="Login-header">Please Log-in</header>
+      <form className="Login-form">
         <label htmlFor="username">Username</label>
         <br />
         <input type="text" id="username">
@@ -14,15 +15,9 @@ function registerUser() {
         <input type="text" id="password">
           password
         </input>
-        <label htmlFor="Password-repeat">Re-enter Password</label>
-        <br />
-        <input type="text" id="Password-repeat">
-          re-enter password
-        </input>
+        <button id="Login-button">Log-in</button>
         <button id="Register_button">Register New User</button>
       </form>
     </div>
   );
 }
-
-export default registerUser;
