@@ -6,7 +6,7 @@ function mainPageHeader() {
       <div className="Header-left">
         <header>World Bank Logo</header>
         <Link to="/login" />
-        <Link to="register" />
+        <Link to="/register" />
       </div>
       <div className="Header-right">
         <Link to="/search" />
