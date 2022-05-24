@@ -1,14 +1,13 @@
-import mainPageHeader from "./components/mainPageHeader";
+import MainPageHeader from "./components/MainPageHeader";
 import routes from "./components/routes";
 
 function App() {
   return (
     <div>
-      {<mainPageHeader />}
+      {<MainPageHeader />}
       {<routes />}
     </div>
   );
-
 }
 
 export default App;
