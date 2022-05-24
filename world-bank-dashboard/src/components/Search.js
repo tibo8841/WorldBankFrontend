@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import MainPageHeader from "./MainPageHeader";
 
-export default function SearchPage() {
+export default function Search() {
   const [country, setCountry] = useState("");
   const [startYear, setStartYear] = useState(1960);
   const [endYear, setEndYear] = useState(2021);
@@ -25,6 +26,7 @@ export default function SearchPage() {
 
   return (
     <div className="search-page">
+      <MainPageHeader />
       <label htmlFor="country">Country</label>
       <input
         className="search country-field"

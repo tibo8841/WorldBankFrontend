@@ -1,6 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 
-function mainPageHeader() {
+export default function MainPageHeader() {
   return (
     <div>
       <div className="Header-left">
@@ -15,5 +15,3 @@ function mainPageHeader() {
     </div>
   );
 }
-
-export default mainPageHeader;
