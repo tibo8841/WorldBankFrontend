@@ -17,7 +17,7 @@ export default function LoginUser() {
       <h1 className="Login-header">Welcome to the World Bank Dashboard!</h1>
       <h3 className="Login-header2">Please log in</h3>
       <form className="Login-form">
-        <label for="username">
+        <label htmlFor="username">
           Username
           <input
             type="text"
@@ -34,6 +34,9 @@ export default function LoginUser() {
           ></input>
         </label>
         <input type="submit" value="Login" onClick={handleSubmit}></input>
+        <button id="Register_button">
+          Not signed up? Click here to create an account
+        </button>
       </form>
     </div>
   );
