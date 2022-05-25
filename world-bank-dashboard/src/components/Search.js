@@ -25,7 +25,6 @@ export default function Search() {
 
   return (
     <div className="search-page">
-      <MainPageHeader />
       <label htmlFor="country">Country</label>
       <input
         className="search country-field"
