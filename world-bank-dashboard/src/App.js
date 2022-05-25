@@ -1,5 +1,5 @@
 import MainPageHeader from "./components/MainPageHeader";
-import WebRoutes from "./components/routes";
+import WebRoutes from "./components/WebRoutes";
 
 function App() {
   return (
