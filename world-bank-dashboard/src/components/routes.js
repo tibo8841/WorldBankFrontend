@@ -4,6 +4,7 @@ import RegisterUser from "./RegisterUser";
 import Search from "./Search";
 import Home from "./Home";
 import History from "./History";
+import Results from "./Results";
 
 export default function WebRoutes() {
   return (
