@@ -14,6 +14,7 @@ export default function WebRoutes() {
         <Route path="register" element={<RegisterUser />} />
         <Route path="history" element={<History />} />
         <Route path="search" element={<Search />} />
+        <Route path="results" element={<Results />} />
       </Routes>
     </div>
   );
