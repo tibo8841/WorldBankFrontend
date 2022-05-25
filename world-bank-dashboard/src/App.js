@@ -1,11 +1,11 @@
 import MainPageHeader from "./components/MainPageHeader";
-import routes from "./components/routes";
+import WebRoutes from "./components/routes";
 
 function App() {
   return (
     <div>
       {<MainPageHeader />}
-      {<routes />}
+      {<WebRoutes />}
     </div>
   );
 }
