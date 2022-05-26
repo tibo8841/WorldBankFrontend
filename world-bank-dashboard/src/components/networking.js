@@ -1,14 +1,16 @@
-const url = "https://shrouded-plateau-99916.herokuapp.com/";
+const url = "https://shrouded-plateau-99916.herokuapp.com";
 
 export async function getSearchHistory(userID) {
   const userIDObject = { userID: userID };
-  await fetch(`${url}/history`, {
+  let result = await fetch(`${url}/history`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(userIDObject),
   });
+  let json = await result.json();
+  return json.rows;
 }
 
 export async function postSearchHistory(
@@ -33,9 +35,11 @@ export async function postSearchHistory(
 }
 
 export async function getSearchResults(countries, indicators, yearRange) {
-  await fetch(
+  let result = await fetch(
     `${url}/search?country=${countries}&indicator=${indicators}&yearStart=${yearRange[0]}&yearEnd=${yearRange[1]}`
   );
+  let json = await result.json();
+  return json.rows;
 }
 
 export async function getUserLogin(username, password) {
