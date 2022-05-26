@@ -1,18 +1,27 @@
 import { useState } from "react";
+const url = "http://localhost:3000";
 
-export default function RegisterUser() {
+export default async function RegisterUser() {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const [passwordConfirmation, setPasswordConfirmation] = useState();
 
-  function handleSubmit() {
-    return;
+  async function handleRegistration() {
+    await fetch(`${url}/register`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: `${username}`,
+        password: `${password}`,
+        passwordConfirmation: `${passwordConfirmation}`,
+      }),
+    });
   }
 
   return (
     <div className="Register">
       <header className="Register-Header">Register New User</header>
-      <form className="Register-form">
+      <form className="Register-form" onSubmit={handleRegistration}>
         <label htmlFor="username">Username</label>
         <br />
         <input
@@ -38,7 +47,6 @@ export default function RegisterUser() {
         <input
           type="submit"
           id="Register_button"
-          onClick={handleSubmit}
           value="Register New User"
         ></input>
       </form>
