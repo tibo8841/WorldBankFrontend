@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import MainPageHeader from "./MainPageHeader";
+import Results from "./Results";
+import { getSearchResults } from "./networking";
 
 export default function Search() {
   const [country, setCountry] = useState("");
   const [startYear, setStartYear] = useState(1960);
-  const [endYear, setEndYear] = useState(2021);
+  const [endYear, setEndYear] = useState(2015);
   const [indicator, setIndicator] = useState("");
+  const [searchResults, setSearchResults] = useState(undefined);
 
   // DO A USE EFFECT TO GET LIST OF INDICATORS TO SELECT AS OPTIONS
   // SQL QUERY IN BACKEND LIKE    "SELECT DISTINCT IndicatorName FROM indicators;"
@@ -19,8 +21,12 @@ export default function Search() {
     2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015,
   ];
 
-  function handleSearchRequest() {
-    return;
+  async function handleSearchRequest() {
+    const results = await getSearchResults(country, indicator, [
+      startYear,
+      endYear,
+    ]);
+    setSearchResults(results);
   }
 
   return (
@@ -55,6 +61,7 @@ export default function Search() {
       <button className="search submit-btn" onClick={handleSearchRequest}>
         Search!
       </button>
+      <Results results={searchResults} />
     </div>
   );
 }
