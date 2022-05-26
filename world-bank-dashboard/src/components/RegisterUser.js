@@ -6,16 +6,16 @@ export default async function RegisterUser() {
   const [password, setPassword] = useState();
   const [passwordConfirmation, setPasswordConfirmation] = useState();
 
-  function handleRegistration() {
+  async function handleRegistration() {
     await fetch(`${url}/register`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         username: `${username}`,
         password: `${password}`,
-        passwordConfirmation: `${passwordConfirmation}`
-      })
-    })
+        passwordConfirmation: `${passwordConfirmation}`,
+      }),
+    });
   }
 
   return (
