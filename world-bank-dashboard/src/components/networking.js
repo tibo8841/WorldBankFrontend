@@ -19,11 +19,12 @@ export async function postSearchHistory(
   indicators,
   yearRange
 ) {
+  const years = `${yearRange[0]} - ${yearRange[1]}`;
   const searchHistory = {
     userID: userID,
     countries: countries,
     indicators: indicators,
-    yearRange: yearRange,
+    yearRange: years,
   };
   await fetch(`${url}/search`, {
     method: "POST",
