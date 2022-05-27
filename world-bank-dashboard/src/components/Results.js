@@ -12,18 +12,19 @@ export default function Results(props) {
     const values = [];
     const yearRange = [];
     for (const result of data) {
-      values.push(result.Value);
-      yearRange.push(result.Year);
+      values.push(result.value);
+      yearRange.push(result.year);
     }
     return (
       <LineChart
-        country={data[0].country}
-        indicator={data[0].indicator}
+        country={data[0].countrycode}
+        indicator={data[0].indicatorname}
         yearRange={yearRange}
         values={values}
       />
     );
   }
-  if (data) return <div>{createLineChart()}</div>;
   if (!data) return <div>No data</div>;
+  else if (data.length === 0) return <div>No data</div>;
+  else if (data.length > 0) return <div>{createLineChart()}</div>;
 }
