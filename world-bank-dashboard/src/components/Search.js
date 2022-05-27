@@ -2,7 +2,11 @@
 import { css, jsx } from "@emotion/react";
 import { useState, useEffect } from "react";
 import Results from "./Results";
-import { getSearchResults, getIndicators } from "./networking";
+import {
+  getSearchResults,
+  getIndicators,
+  postSearchHistory,
+} from "./networking";
 
 const flexMother = css({
   display: "flex",
@@ -78,7 +82,7 @@ const textFormat = css({
   paddingRight: "2%",
 });
 
-export default function Search() {
+export default function Search(props) {
   const [country, setCountry] = useState("");
   const [startYear, setStartYear] = useState(1960);
   const [endYear, setEndYear] = useState(2015);
@@ -104,6 +108,10 @@ export default function Search() {
       endYear,
     ]);
     setSearchResults(results);
+    await postSearchHistory(props.login, country, indicator, [
+      startYear,
+      endYear,
+    ]);
   }
 
   return (
