@@ -8,7 +8,7 @@ export default function Search() {
   const [endYear, setEndYear] = useState(2015);
   const [indicator, setIndicator] = useState("");
   const [searchResults, setSearchResults] = useState(undefined);
-  // const indicators = getIndicators();
+  const indicators = getIndicators();
 
   // DO A USE EFFECT TO GET LIST OF INDICATORS TO SELECT AS OPTIONS
   // SQL QUERY IN BACKEND LIKE    "SELECT DISTINCT IndicatorName FROM indicators;"
