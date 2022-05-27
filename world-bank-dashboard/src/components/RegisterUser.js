@@ -1,7 +1,12 @@
-import { useState } from "react";
+/** @jsxImportSource @emotion/react */
+import { css, jsx } from "@emotion/react";
+import { React, useState } from "react";
 const url = "http://localhost:3000";
 
-export default async function RegisterUser() {
+const flexContainer = css({ display: "flex" });
+const flexChild = css({ display: "flex" });
+
+export default function RegisterUser() {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const [passwordConfirmation, setPasswordConfirmation] = useState();
@@ -19,26 +24,28 @@ export default async function RegisterUser() {
   }
 
   return (
-    <div className="Register">
+    <div className="Register" css={flexContainer}>
       <header className="Register-Header">Register New User</header>
       <form className="Register-form" onSubmit={handleRegistration}>
-        <label htmlFor="username">Username</label>
-        <br />
+        <label htmlFor="username" css={flexChild}>
+          Username
+        </label>
         <input
           type="text"
           id="username"
           onChange={(e) => setUsername(e.target.value)}
         ></input>
-        <br />
-        <label htmlFor="password">Password</label>
-        <br />
+        <label htmlFor="password" css={flexChild}>
+          Password
+        </label>
         <input
           type="password"
           id="password"
           onChange={(e) => setPassword(e.target.value)}
         ></input>
-        <label htmlFor="Password-repeat">Re-enter Password</label>
-        <br />
+        <label htmlFor="Password-repeat" css={flexChild}>
+          Re-enter Password
+        </label>
         <input
           type="password"
           id="Password-repeat"
@@ -48,6 +55,7 @@ export default async function RegisterUser() {
           type="submit"
           id="Register_button"
           value="Register New User"
+          css={flexChild}
         ></input>
       </form>
     </div>
