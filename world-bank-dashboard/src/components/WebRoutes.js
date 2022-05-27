@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css, jsx } from "@emotion/react";
 import { Routes, Route, Link } from "react-router-dom";
 import LoginUser from "./LoginUser";
 import RegisterUser from "./RegisterUser";
@@ -6,10 +8,20 @@ import Home from "./Home";
 import History from "./History";
 import Results from "./Results";
 
+const backgroundAndGeneralLayout = css({
+  backgroundColor: "#b4e4dd",
+  textAlign: "center",
+  height: "100%",
+  display: "flex",
+  justifyContent: "center",
+});
+
+const childContainers = css({ flex: "1" });
+
 export default function WebRoutes(props) {
   return (
-    <div>
-      <Routes>
+    <div css={backgroundAndGeneralLayout}>
+      <Routes css={childContainers}>
         <Route path="/" element={<Home />} />
         <Route
           path="login"
