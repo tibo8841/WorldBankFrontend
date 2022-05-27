@@ -1,6 +1,82 @@
+/** @jsxImportSource @emotion/react */
+import { css, jsx } from "@emotion/react";
 import { useState, useEffect } from "react";
 import Results from "./Results";
 import { getSearchResults, getIndicators } from "./networking";
+
+const flexMother = css({
+  display: "flex",
+  height: "100%",
+  width: "80%",
+  flexDirection: "column",
+});
+
+const flexContainer = css({
+  backgroundColor: "#b4e4dd",
+  display: "flex",
+  justifyContent: "center",
+  height: "10%",
+  width: "100%",
+  paddingTop: "2%",
+  paddingBottom: "2%",
+});
+
+const flexChild = css({
+  textAlign: "center",
+  justifyContent: "center",
+  paddingTop: "1%",
+  paddingBottom: "1%",
+  display: "flex",
+  fontSize: "130%",
+  alignItems: "center",
+});
+
+const flexChild2 = css({
+  textAlign: "center",
+  justifyContent: "center",
+  alignItems: "center",
+  paddingTop: "1%",
+  paddingBottom: "1%",
+  flexGrow: "1.2",
+  display: "flex",
+  fontSize: "130%",
+});
+
+const flexChild3 = css({
+  flex: "1",
+  textAlign: "center",
+  justifyContent: "center",
+  alignItems: "center",
+  paddingTop: "1%",
+  paddingBottom: "1%",
+  flexGrow: "1.1",
+  display: "flex",
+  fontSize: "130%",
+});
+
+const widerInput = css({
+  width: "60%",
+  height: "50%",
+});
+
+const tallerCountryInput = css({ height: "50%" });
+const tallerYearInput = css({ height: "65%" });
+
+const button = css({
+  paddingLeft: "10%",
+  paddingRight: "10%",
+  fontSize: "150%",
+  color: "#e87827",
+  fontWeight: "bold",
+});
+
+const results = css({ flex: "1" });
+
+const textFormat = css({
+  color: "#e87499",
+  fontWeight: "bold",
+  paddingRight: "2%",
+});
 
 export default function Search() {
   const [country, setCountry] = useState("");
@@ -31,38 +107,64 @@ export default function Search() {
   }
 
   return (
-    <div className="search-page">
-      <label htmlFor="country">Country</label>
-      <input
-        className="search country-field"
-        onChange={(e) => setCountry(e.target.value)}
-      ></input>
-      <label htmlFor="indicators">Indicators</label>
-      <input
-        className="search indicator-field"
-        onChange={(e) => setIndicator(e.target.value)}
-      ></input>
-      <label htmlFor="year-range">Year Range</label>
-      <select
-        className="search start-year"
-        onChange={(e) => setStartYear(e.target.value)}
-      >
-        {yearList.map((year) => {
-          return <option value={year}>{year}</option>;
-        })}
-      </select>
-      <select
-        className="search end-year"
-        onChange={(e) => setEndYear(e.target.value)}
-      >
-        {yearList.map((year) => {
-          return <option value={year}>{year}</option>;
-        })}
-      </select>
-      <button className="search submit-btn" onClick={handleSearchRequest}>
-        Search!
-      </button>
-      <Results results={searchResults} />
+    <div css={flexMother}>
+      <div className="search-page" css={flexContainer}>
+        <div css={flexChild}>
+          <label htmlFor="country" css={textFormat}>
+            Country
+          </label>
+          <input
+            className="search country-field"
+            css={tallerCountryInput}
+            onChange={(e) => setCountry(e.target.value)}
+          ></input>
+        </div>
+        <div css={flexChild2}>
+          <label htmlFor="indicators" css={textFormat}>
+            Indicators{" "}
+          </label>
+          <input
+            css={widerInput}
+            className="search indicator-field"
+            onChange={(e) => setIndicator(e.target.value)}
+          ></input>
+        </div>
+        <div css={flexChild3}>
+          <label htmlFor="year-range" css={textFormat}>
+            Year Range
+          </label>
+          <select
+            css={tallerYearInput}
+            className="search start-year"
+            onChange={(e) => setStartYear(e.target.value)}
+          >
+            {yearList.map((year) => {
+              return <option value={year}>{year}</option>;
+            })}
+          </select>
+          <select
+            css={tallerYearInput}
+            className="search end-year"
+            onChange={(e) => setEndYear(e.target.value)}
+          >
+            {yearList.map((year) => {
+              return <option value={year}>{year}</option>;
+            })}
+          </select>
+        </div>
+      </div>
+      <div css={flexContainer}>
+        <button
+          className="search submit-btn"
+          onClick={handleSearchRequest}
+          css={button}
+        >
+          Search
+        </button>
+      </div>
+      <div css={flexContainer}>
+        <Results results={searchResults} css={results} />
+      </div>
     </div>
   );
 }
