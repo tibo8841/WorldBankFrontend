@@ -71,3 +71,9 @@ export async function registerNewUser(
     body: JSON.stringify(newUserDetails),
   });
 }
+
+export async function getIndicators() {
+  const indicators = await fetch(`${url}/search/indicators`);
+  const json = await indicators.json();
+  return json.rows;
+}
