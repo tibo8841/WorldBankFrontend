@@ -6,9 +6,11 @@ import { getSearchResults, getIndicators } from "./networking";
 
 const flexMother = css({
   display: "flex",
-  height: "100%",
+  height: "150%",
   backgroundColor: "#b4e4dd",
-  width: "80%",
+  width: "100%",
+  paddingLeft: "10%",
+  paddingRight: "10%",
   flexDirection: "column",
 });
 
