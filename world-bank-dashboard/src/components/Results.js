@@ -3,7 +3,7 @@ import LineChart from "./LineChart";
 /** @jsxImportSource @emotion/react */
 import { css, jsx } from "@emotion/react";
 
-const padding = css({ padding: "5%" });
+const padding = css({ padding: "5%", width: "150%" });
 
 const textFormat = css({
   fontSize: "150%",

@@ -10,8 +10,11 @@ import {
 
 const flexMother = css({
   display: "flex",
-  height: "100%",
-  width: "80%",
+  height: "150%",
+  backgroundColor: "#b4e4dd",
+  width: "100%",
+  paddingLeft: "10%",
+  paddingRight: "10%",
   flexDirection: "column",
 });
 

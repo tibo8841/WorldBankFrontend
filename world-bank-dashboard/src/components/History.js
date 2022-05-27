@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 export default function History(props) {
@@ -6,4 +7,4 @@ export default function History(props) {
   async function getHistory() {}
 
   return <div>search cards will go here</div>;
-}
+

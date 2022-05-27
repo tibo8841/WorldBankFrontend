@@ -8,7 +8,7 @@ const backgroundAndGeneralLayout = css({
   paddingBottom: "2%",
   paddingLeft: "1%",
   paddingRight: "1%",
-  width: "100%",
+  width: "98%",
   height: "10%",
   paddingTop: "2%",
 });

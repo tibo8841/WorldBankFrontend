@@ -16,7 +16,7 @@ const backgroundAndGeneralLayout = css({
   justifyContent: "center",
 });
 
-const childContainers = css({ flex: "1" });
+const childContainers = css({ flex: "1", height: "100%" });
 
 export default function WebRoutes(props) {
   return (

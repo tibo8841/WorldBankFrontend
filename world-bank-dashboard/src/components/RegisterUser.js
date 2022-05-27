@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css, jsx } from "@emotion/react";
 import { React, useState } from "react";
-const url = "http://localhost:3000";
+import { registerNewUser } from "./networking";
 
 const flexContainer = css({
   display: "flex",
@@ -58,16 +58,8 @@ export default function RegisterUser() {
   const [password, setPassword] = useState();
   const [passwordConfirmation, setPasswordConfirmation] = useState();
 
-  async function handleRegistration() {
-    await fetch(`${url}/register`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username: `${username}`,
-        password: `${password}`,
-        passwordConfirmation: `${passwordConfirmation}`,
-      }),
-    });
+  function handleRegistration() {
+    registerNewUser(username, password, passwordConfirmation);
   }
 
   return (
