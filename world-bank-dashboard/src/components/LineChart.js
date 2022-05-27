@@ -1,8 +1,9 @@
 import { Line } from "react-chartjs-2";
+import Chart from "chart.js/auto";
 
 export default function LineChart(props) {
   const state = {
-    lables: props.yearRange,
+    labels: props.yearRange,
     datasets: [
       {
         label: props.country,
