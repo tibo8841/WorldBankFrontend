@@ -1,5 +1,15 @@
 import { useState, useEffect } from "react";
 import LineChart from "./LineChart";
+/** @jsxImportSource @emotion/react */
+import { css, jsx } from "@emotion/react";
+
+const padding = css({ padding: "5%" });
+
+const textFormat = css({
+  fontSize: "150%",
+  color: "#102e51",
+  fontWeight: "bold",
+});
 
 export default function Results(props) {
   const [data, setData] = useState(undefined);
@@ -24,7 +34,9 @@ export default function Results(props) {
       />
     );
   }
-  if (!data) return <div>No data</div>;
-  else if (data.length === 0) return <div>No data</div>;
-  else if (data.length > 0) return <div>{createLineChart()}</div>;
+  if (!data)
+    return <div css={textFormat}>Fill in parameters and click search!</div>;
+  else if (data.length === 0)
+    return <div css={textFormat}>Fill in parameters and click search!</div>;
+  else if (data.length > 0) return <div css={padding}>{createLineChart()}</div>;
 }
