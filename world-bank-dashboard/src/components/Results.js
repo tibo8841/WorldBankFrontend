@@ -21,18 +21,23 @@ export default function Results(props) {
   function createLineChart() {
     const values = [];
     const yearRange = [];
+
     for (const result of data) {
       values.push(result.value);
       yearRange.push(result.year);
     }
-    return (
-      <LineChart
-        country={data[0].countrycode}
-        indicator={data[0].indicatorname}
-        yearRange={yearRange}
-        values={values}
-      />
-    );
+    if (yearRange.length === 1) {
+      return parseInt(values);
+    } else {
+      return (
+        <LineChart
+          country={data[0].countrycode}
+          indicator={data[0].indicatorname}
+          yearRange={yearRange}
+          values={values}
+        />
+      );
+    }
   }
   if (!data)
     return <div css={textFormat}>Fill in parameters and click search!</div>;
