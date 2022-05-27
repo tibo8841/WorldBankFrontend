@@ -43,14 +43,11 @@ export async function getSearchResults(countries, indicators, yearRange) {
 }
 
 export async function getUserLogin(username, password) {
-  const userLogin = { username: username, password: password };
-  await fetch(`${url}/login`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(userLogin),
-  });
+  const loginCheck = await fetch(
+    `${url}/login?username=${username}&password=${password}`
+  );
+  const json = await loginCheck.json();
+  return json;
 }
 
 export async function registerNewUser(

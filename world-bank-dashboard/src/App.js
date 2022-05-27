@@ -1,3 +1,4 @@
+import { useState } from "react";
 import MainPageHeader from "./components/MainPageHeader";
 import WebRoutes from "./components/WebRoutes";
 /** @jsxImportSource @emotion/react */
@@ -11,10 +12,15 @@ const homePage = css({
 });
 
 function App() {
+  const [login, setLogin] = useState("");
+  async function userLoggedIn(check) {
+    await setLogin(check);
+    console.log(login);
+  }
   return (
     <div css={homePage}>
       {<MainPageHeader />}
-      {<WebRoutes />}
+      {<WebRoutes userLoggedIn={userLoggedIn} login={login} />}
     </div>
   );
 }

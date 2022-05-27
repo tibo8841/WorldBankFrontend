@@ -18,15 +18,18 @@ const backgroundAndGeneralLayout = css({
 
 const childContainers = css({ flex: "1", height: "100%" });
 
-export default function WebRoutes() {
+export default function WebRoutes(props) {
   return (
     <div css={backgroundAndGeneralLayout}>
       <Routes css={childContainers}>
         <Route path="/" element={<Home />} />
-        <Route path="login" element={<LoginUser />} />
+        <Route
+          path="login"
+          element={<LoginUser userLoggedIn={props.userLoggedIn} />}
+        />
         <Route path="register" element={<RegisterUser />} />
-        <Route path="history" element={<History />} />
-        <Route path="search" element={<Search />} />
+        <Route path="history" element={<History login={props.login} />} />
+        <Route path="search" element={<Search login={props.login} />} />
         <Route path="results" element={<Results />} />
       </Routes>
     </div>
