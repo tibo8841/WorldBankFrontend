@@ -6,15 +6,18 @@ import Home from "./Home";
 import History from "./History";
 import Results from "./Results";
 
-export default function WebRoutes() {
+export default function WebRoutes(props) {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="login" element={<LoginUser />} />
+        <Route
+          path="login"
+          element={<LoginUser userLoggedIn={props.userLoggedIn} />}
+        />
         <Route path="register" element={<RegisterUser />} />
-        <Route path="history" element={<History />} />
-        <Route path="search" element={<Search />} />
+        <Route path="history" element={<History login={props.login} />} />
+        <Route path="search" element={<Search login={props.login} />} />
         <Route path="results" element={<Results />} />
       </Routes>
     </div>

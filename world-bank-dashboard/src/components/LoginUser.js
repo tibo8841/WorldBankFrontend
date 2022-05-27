@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { getUserLogin } from "./networking";
 
-export default function LoginUser() {
+export default function LoginUser(props) {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
 
@@ -8,8 +9,11 @@ export default function LoginUser() {
   // Add functionality to check user info against users table
   // => when user info matches database (goes to search page) and when it doesn't (throws an error and asks to try again)
 
-  function handleSubmit() {
-    return;
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const loginCheck = await getUserLogin(username, password);
+    console.log(loginCheck);
+    props.userLoggedIn(loginCheck.rows[0].id);
   }
 
   return (
