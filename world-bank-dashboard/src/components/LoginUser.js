@@ -2,6 +2,7 @@
 import { css } from "@emotion/react";
 import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import { getUserLogin } from "./networking";
 
 const flexContainer = css({
   display: "flex",
@@ -49,12 +50,19 @@ const subheading = css({
   flex: "1",
 });
 
-export default function LoginUser() {
+export default function LoginUser(props) {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
 
-  function handleSubmit() {
-    return;
+  // Add hashing and salting of password for security
+  // Add functionality to check user info against users table
+  // => when user info matches database (goes to search page) and when it doesn't (throws an error and asks to try again)
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const loginCheck = await getUserLogin(username, password);
+    console.log(loginCheck);
+    props.userLoggedIn(loginCheck.rows[0].id);
   }
 
   return (
